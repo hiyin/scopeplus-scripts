@@ -1,0 +1,32 @@
+"Approach","Mean (in seconds)","p99 (in seconds)","p95 (in seconds)","p50 (in seconds)"
+0
+Traceback (most recent call last):
+  File "test_index_performance.py", line 78, in <module>
+    times = benchmark_index(query)
+  File "test_index_performance.py", line 43, in benchmark_index
+    cursor = db_cursor(query)
+  File "test_index_performance.py", line 28, in db_cursor
+    cursor = db.single_cell_meta_country.aggregate(pipeline)  
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/collection.py", line 2429, in aggregate
+    return self._aggregate(
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/collection.py", line 2336, in _aggregate
+    return self.__database.client._retryable_read(
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/_csot.py", line 105, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/mongo_client.py", line 1420, in _retryable_read
+    return func(session, server, sock_info, read_pref)
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/aggregation.py", line 140, in get_cursor
+    result = sock_info.command(
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/pool.py", line 794, in command
+    self._raise_connection_failure(error)
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/pool.py", line 766, in command
+    return command(
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/network.py", line 156, in command
+    reply = receive_message(sock_info, request_id)
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/network.py", line 217, in receive_message
+    _receive_data_on_socket(sock_info, 16, deadline)
+  File "/home/d24h_prog5/benchmark/venv/lib/python3.8/site-packages/pymongo/network.py", line 299, in _receive_data_on_socket
+    chunk_length = sock_info.sock.recv_into(mv[bytes_read:])
+KeyboardInterrupt
