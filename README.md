@@ -1,22 +1,38 @@
-Mongo Pagination Benchmark
+Utilities
 ---
 
-This repository contains Python code that benchmarks the [two approaches for implementing pagination in MongoDB](http://arpitbhayani.me)
+## 10xtomongo.py
+```
+Convert the mtx file to the MongoDB csv
 
- - Using `cursor.skip` and `cursor.limit`
- - Using `_id` and `cursor.limit`
-
-## Setup
-All required packages are put into requirements.lock file so all you need to
-run is the following command
-```bash
-pip install -r requirements.lock
+optional arguments:
+  -h, --help            show this help message and exit
+  -o OUTPUT, --output OUTPUT
+                        Output path of the csv file
+  -m MATRIX, --matrix MATRIX
+                        Input matrix.mtx file
+  -g GENES, --genes GENES
+                        Input gene.tsv file
+  -b BARCODES, --barcodes BARCODES
+                        Input barcodes.tsv file
+  -c COHORT, --cohort COHORT
+                        Cohort identifier to append to barcode name, default: None
+  -f FEATURE, --feature FEATURE
+                        Input barcodes.tsv file
 ```
 
-## Execute
+## h5to10x.py
 ```
-python main.py
+Convert the h5 file to the 10x mtx
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Input h5
+  -o OUTPUT, --output OUTPUT
+                        output path matrix.mtx gene.tsv barcode.tsv file
+  -d DATASET, --dataset DATASET
+                        Input datasetname
 ```
 
-The results and analysis are compiled in this [blog post](http://arpitbhayani.me)
 # covid19_cell_atlas_portal_supp
